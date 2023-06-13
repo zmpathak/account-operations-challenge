@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "b4b94ab2-ad19-43bf-bfc1-586306f41dd4",
+		"name": "account-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27963205"
+	},
+	"item": [
+		{
+			"name": "create account1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\":\"1010111010101011\",\r\n    \"balance\":10000\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:18080/v1/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create account2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\":\"1010111010101012\",\r\n    \"balance\":10000\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:18080/v1/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer Funds",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountFromId\":\"1010111010101011\",\r\n    \"accountToId\":\"1010111010101012\",\r\n    \"amountToTransfer\": 2000\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:18080/v1/accounts/transfer/funds",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"v1",
+						"accounts",
+						"transfer",
+						"funds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get account",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:18080/v1/accounts/1010111010101011",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"v1",
+						"accounts",
+						"1010111010101011"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
